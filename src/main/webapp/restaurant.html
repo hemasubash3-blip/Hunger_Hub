@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunger_hub</title>
+
+<style>
+
+/* SEARCH BAR SECTION */
+.search-section{
+    display:flex;
+    justify-content:center;
+    margin:30px 0;
+}
+
+.search-section input{
+    width:60%;
+    padding:12px 20px;
+    border:2px solid #ff5722;
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.search-section input:focus{
+    box-shadow:0 0 10px rgba(255,87,34,0.4);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#ff5722;
+    color:white;
+    text-align:center;
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+/* HERO SECTION */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:700px;
+    padding:20px;
+}
+
+.hero-content h2{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.hero-content button{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff5722;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.hero-content button:hover{
+    background:#e64a19;
+}
+
+/* SECTIONS */
+.restaurants,
+.foods{
+    padding:50px;
+}
+
+.restaurants h2,
+.foods h2{
+    text-align:center;
+    color:#ff5722;
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+/* GRID */
+.restaurant-grid,
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* CARDS */
+.restaurant-card,
+.food-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.restaurant-card:hover,
+.food-card:hover{
+    transform:translateY(-8px);
+}
+
+.restaurant-card img,
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.restaurant-card h3,
+.food-card h3{
+    padding:15px;
+}
+
+.restaurant-card p{
+    padding:0 15px 15px;
+    color:#666;
+}
+
+.food-card p{
+    padding:0 15px 10px;
+    color:#ff5722;
+    font-weight:bold;
+}
+
+.food-card button{
+    margin:0 15px 15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#ff5722;
+    color:white;
+    cursor:pointer;
+}
+
+.food-card button:hover{
+    background:#e64a19;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero-content h2{
+        font-size:2rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .restaurants,
+    .foods{
+        padding:20px;
+    }
+
+    .restaurant-card img,
+    .food-card img{
+        height:180px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍔 Hunger_hub</h1>
+</header>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunger_hub Navbar</title>
+
+<style>
+
+/* NAVIGATION BAR */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#ffffff;
+    padding:15px 40px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff5722;
+}
+
+.nav-menu{
+    display:flex;
+    gap:30px;
+}
+
+.nav-item{
+    font-size:18px;
+    font-weight:500;
+    cursor:pointer;
+    padding:8px 12px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.nav-item:hover{
+    background:#ff5722;
+    color:white;
+}
+
+.login-btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    background:#ff5722;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.login-btn:hover{
+    background:#e64a19;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">🍔 Hunger_hub</div>
+
+    <div class="nav-menu">
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Restaurants</div>
+        <div class="nav-item">Foods</div>
+        <div class="nav-item">Offers</div>
+        <div class="nav-item">Contact</div>
+    </div>
+
+    <button class="login-btn">Login</button>
+
+</nav>
+
+</body>
+</html>
+
+<!-- HOME SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Delicious Food Delivered To Your Doorstep</h2>
+        <p>
+            Order from your favorite restaurants and enjoy hot,
+            fresh meals anytime, anywhere.
+        </p>
+
+        <button onclick="document.querySelector('.restaurants').scrollIntoView({behavior:'smooth'})">
+            Order Now
+        </button>
+    </div>
+</section>
+<!-- SEARCH BAR (PLACE HERE BELOW HERO) -->
+<div class="search-section">
+    <input type="text" id="searchInput" placeholder="Search foods or restaurants..." onkeyup="searchItems()">
+</div>
+
+<!-- RESTAURANTS -->
+
+
+<section class="restaurants">
+
+<h2>Popular Restaurants</h2>
+
+<div class="restaurant-grid">
+
+<div class="restaurant-card">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800">
+<h3>Paradise Biryani</h3>
+<p>Biryani • 35 mins</p>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800">
+<h3>Burger</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800">
+<h3>Masala Dosa</h3>
+
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=800">
+<h3>Hakka Noodles</h3>
+
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800">
+<h3>Fried Rice</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800">
+<h3>Chocolate Cake</h3>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800">
+<h3>Paneer Butter Masala</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800">
+<h3>Butter Chicken</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800">
+<h3>Veg Fried Rice</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800">
+<h3>Chicken Momos</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800">
+<h3>French Fries</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800">
+<h3>Caesar Salad</h3>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=800">
+<h3>Pasta Alfredo</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=800">
+<h3>Pancakes</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800">
+<h3>Ice Cream</h3>
+</div>
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800">
+<h3>Fresh Juice</h3>
+</div>
+
+</div>
+
+</section>
+
+</body>
+<script>
+function searchItems() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("food-card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+
+        if (title.includes(input)) {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</html>
+
